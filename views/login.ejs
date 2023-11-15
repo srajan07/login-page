@@ -1,0 +1,66 @@
+<% layout("layout/boilerplate") -%>
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .card {
+        width: 20rem;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .card:hover {
+        box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .btn-success {
+        width: 100%;
+        margin-top: 15px;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+           <!-- Flash messages go here -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Login:</h5>
+             
+                <!-- <div class="mb-1"></div> -->
+                <form action="/login" method="post">
+                    <div class="mb-1">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                    <div class="mb-1">
+                        <label for="exampleInputPassword1" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-success">Login</button>
+                    <br> <br><span>No account? </span>&nbsp;<a href="/signup" class="btn btn-secondary">Sign up</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

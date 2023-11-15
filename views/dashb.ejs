@@ -1,0 +1,115 @@
+<%  layout("layout/boilerplate") -%>
+
+  <style>
+        body {
+            background-color: #f8f9fa; /* Set a background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .navbar {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+        }
+       #navbarNav a{
+            list-style-type: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        
+                            <h3>Cloud project</h3>
+                            <div class="navbar-nav ms-auto">
+                            <%  if(!currUser) { %>
+                                <a class="nav-link " aria-current="page" href="/signup"><b>Signup</b></a>&nbsp;&nbsp;
+                                <a class="nav-link" href="/login"><b>login</b></a>
+                           <% } %> <% if(currUser) { %>
+                                          <a class="nav-link" href="/logout"><b>logout</b></a>
+                              <% } %>
+                            </div> 
+                        </div> 
+
+                                           </div>
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <% if(currUser) { %>
+            <div class="container">
+                <h2>Welcome to the My  cloud project</h2>
+                 <b>Introduction:</b>
+                 <p> This login page is designed to provide a 
+                    secure and efficient authentication system for your web applications.</p>
+     
+                    <ul>
+                        
+                           
+                <b> Table of Contents:</b>
+                <li>  Getting Started </li>
+                <li>  Installation</li>
+                <li>  Configuration</li>
+                <li>  Usage</li>
+                <li>   Routes</li>
+                <li>   Middleware</li>
+                <li>   Security Considerations</li>
+                <li>   Examples</li>
+                <li>    Troubleshooting</li>
+                <li>   Contributing</li>
+                       
+                 </ul>
+                 <b>Getting Started</b>
+                 <p>Before using the login page, make sure you have Node.js and npm installed on your machine.
+
+                 </p>
+                 <b>Installation</b>
+                 <p>To install the login page, run the following command in your terminal:</p>
+
+                 <b style="color: red;">npm install</b>
+    <br>
+                 <b>Middleware</b>
+                 <p>The login page includes middleware for session management and user authentication. You can customize the middleware in the middleware.js file.</p>
+                
+                 <b>Security Considerations</b>
+                 <p>Ensure that your application follows security best practices.
+                     Always use HTTPS in production, hash and salt passwords, 
+                     and validate user input to prevent common security vulnerabilities</p>
+                     <% } %>
+                </div>
+        </div>
+    </div>
+
+ 
